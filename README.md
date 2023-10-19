@@ -1,5 +1,7 @@
 # Estacionamento
 
+```mermaid
+
 src/
   │
   ├─ main/
@@ -33,7 +35,7 @@ src/
   │
   └─ target/                            <-- Diretório alvo para saída compilada
 
-
+```
 Classe User
 
 A classe User representa um usuário no sistema de gerenciamento de estacionamento. Ela é mapeada para a tabela "users" no banco de dados.
