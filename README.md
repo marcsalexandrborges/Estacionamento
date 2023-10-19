@@ -1,41 +1,50 @@
 # Estacionamento
 
 ```mermaid
+                          
+graph TB
+    subgraph src
+        subgraph main
+            subgraph java
+                subgraph dio/bootcamp/santander/estacionamento
+                    classDef config fill:#f9eb0f,stroke:#333,stroke-width:2px;
+                    classDef controllers fill:#f9eb0f,stroke:#333,stroke-width:2px;
+                    classDef dtos fill:#f9eb0f,stroke:#333,stroke-width:2px;
+                    classDef entity fill:#f9eb0f,stroke:#333,stroke-width:2px;
+                    classDef repository fill:#f9eb0f,stroke:#333,stroke-width:2px;
+                    classDef security fill:#f9eb0f,stroke:#333,stroke-width:2px;
+                    classDef services fill:#f9eb0f,stroke:#333,stroke-width:2px;
+                    classDef clients fill:#f9eb0f,stroke:#333,stroke-width:2px;
 
-src/
-  │
-  ├─ main/
-  │  │
-  ├─ java/
-  │  │
-  │  └─ dio/
-  │      └─ bootcamp/
-  │          └─ santander/
-  │              └─ estacionamento/
-  │                  │
-  │                  ├─ config/        <-- Pacotes relacionados a configurações do aplicativo
-  │                  │
-  │                  ├─ controllers/   <-- Pacotes para classes de controladores (endpoints REST)
-  │                  │
-  │                  ├─ dtos/          <-- Pacotes para classes de objetos de transferência de dados (DTOs)
-  │                  │
-  │                  ├─ entity/        <-- Pacotes para classes de entidades do banco de dados
-  │                  │
-  │                  ├─ repository/     <-- Pacotes para interfaces de repositório (Spring Data JPA)
-  │                  │
-  │                  ├─ security/      <-- Pacotes relacionados a configurações de segurança (Spring Security)
-  │                  │
-  │                  ├─ services/      <-- Pacotes para classes de serviços
-  │                  │
-  │                  └─ clients/       <-- Pacotes relacionados a clientes externos (usando Feign)
-  │
-  └─ resources/                         <-- Arquivos de recursos (por exemplo, arquivos de propriedades, arquivos HTML, etc.)
-  │
-  └─ test/                              <-- Pacotes de teste
-  │
-  └─ target/                            <-- Diretório alvo para saída compilada
+                    class config configConfig;
+                    class controllers configControllers;
+                    class dtos configDTOs;
+                    class entity configEntity;
+                    class repository configRepository;
+                    class security configSecurity;
+                    class services configServices;
+                    class clients configClients;
+
+                    config --> controllers
+                    controllers --> dtos
+                    dtos --> entity
+                    entity --> repository
+                    repository --> security
+                    security --> services
+                    services --> clients
+                end
+            end
+        end
+        subgraph resources
+        end
+        subgraph test
+        end
+        subgraph target
+        end
+    end
 
 ```
+
 Classe User
 
 A classe User representa um usuário no sistema de gerenciamento de estacionamento. Ela é mapeada para a tabela "users" no banco de dados.
